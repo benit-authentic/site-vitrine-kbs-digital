@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logo from "@/assets/logo-kbs.png";
 
 const navLinks = [
   { name: "Accueil", href: "#accueil" },
   { name: "À propos", href: "#apropos" },
   { name: "Services", href: "#services" },
+  { name: "Équipe", href: "#equipe" },
   { name: "Hackathons", href: "#hackathons" },
-  { name: "Témoignages", href: "#temoignages" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -40,19 +41,23 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="default" size="default">
               Prendre RDV
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex lg:hidden items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-foreground"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
