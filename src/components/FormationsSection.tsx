@@ -1,4 +1,4 @@
-import { Code, Smartphone, Globe, Palette, Shield, FileText, Sparkles, Clock, Users, Award } from "lucide-react";
+import { Code, Smartphone, Globe, Palette, Shield, FileText, Sparkles, Clock, Users, Award, Megaphone, Network } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -66,6 +66,24 @@ const formations = [
     level: "Tous niveaux",
     topics: ["ChatGPT", "GitHub Copilot", "Midjourney", "Automatisation"],
     color: "text-cyan-500",
+  },
+  {
+    icon: Megaphone,
+    title: "Marketing et Communication",
+    description: "Développez votre présence digitale et maîtrisez les stratégies de communication moderne.",
+    duration: "2-3 mois",
+    level: "Débutant à Intermédiaire",
+    topics: ["Marketing digital", "Réseaux sociaux", "Content marketing", "SEO/SEA"],
+    color: "text-indigo-500",
+  },
+  {
+    icon: Network,
+    title: "Réseaux et Systèmes",
+    description: "Comprenez les fondamentaux des réseaux informatiques et administration système.",
+    duration: "3-4 mois",
+    level: "Intermédiaire",
+    topics: ["Architecture réseau", "Protocoles TCP/IP", "Administration Linux", "Configuration serveur"],
+    color: "text-teal-500",
   },
 ];
 
