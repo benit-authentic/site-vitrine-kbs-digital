@@ -58,10 +58,30 @@ export function HackathonSection() {
           ))}
         </div>
 
-        {/* Winner project */}
+        {/* Hackathon Image */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src={eventHackathon}
+              alt="Hackathon KBS-DIGITAL"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
+                Hackathon Kara 2025
+              </h3>
+              <p className="text-white/90 text-sm md:text-base">
+                48h d'innovation intense pour créer les solutions de demain
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Event Success & Recognition */}
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8 md:p-10 border border-primary/30 relative overflow-hidden backdrop-blur-sm">
-            {/* Trophy badge */}
+            {/* Decorative element */}
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
             
             <div className="flex items-start gap-4 mb-6">
@@ -69,27 +89,38 @@ export function HackathonSection() {
                 <Trophy className="h-7 w-7 text-primary-foreground" />
               </div>
               <div>
-                <span className="text-primary text-sm font-semibold">1er Prix - Kara 2025</span>
+                <span className="text-primary text-sm font-semibold">Édition 2025</span>
                 <h3 className="font-display text-2xl font-bold text-secondary-foreground mt-1">
-                  AgriTech Solutions
+                  Un Succès Retentissant
                 </h3>
               </div>
             </div>
 
             <p className="text-secondary-foreground/80 leading-relaxed mb-6">
-              Application mobile innovante pour connecter les agriculteurs locaux aux marchés urbains, 
-              facilitant la vente directe et réduisant les intermédiaires.
+              Organisé par KBS-DIGITAL avec l'appui du <strong>Gouverneur de la région de la Kara</strong> et de l'incubateur local, 
+              cet événement a bénéficié de la présence d'un représentant de la mairie, témoignant de l'engagement des autorités 
+              pour l'innovation technologique dans la région.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 bg-secondary-foreground/10 px-4 py-2 rounded-full">
-                <Users className="h-4 w-4 text-primary" />
-                <span className="text-sm text-secondary-foreground">4 membres</span>
+            <div className="space-y-3 mb-6">
+              <div className="flex items-start gap-3">
+                <Trophy className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-secondary-foreground/80">
+                  <strong>3 prix décernés</strong> avec récompenses financières pour les meilleures innovations
+                </p>
               </div>
-              <div className="flex items-center gap-2 bg-secondary-foreground/10 px-4 py-2 rounded-full">
-                <Code className="h-4 w-4 text-primary" />
-                <span className="text-sm text-secondary-foreground">React Native</span>
+              <div className="flex items-start gap-3">
+                <Users className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <p className="text-secondary-foreground/80">
+                  <strong>Tous les participants</strong> ont reçu des attestations de participation reconnues
+                </p>
               </div>
+            </div>
+
+            <div className="pt-4 border-t border-secondary-foreground/10">
+              <p className="text-sm text-secondary-foreground/60 italic">
+                Un événement qui positionne KBS-DIGITAL comme acteur majeur de l'écosystème tech togolais
+              </p>
             </div>
           </div>
         </div>

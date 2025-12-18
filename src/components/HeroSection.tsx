@@ -4,7 +4,7 @@ import logo from "@/assets/logo-kbs.png";
 
 export function HeroSection() {
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center overflow-hidden bg-hero">
+    <section id="accueil" className="relative min-h-screen flex items-center overflow-hidden bg-background">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
@@ -39,52 +39,45 @@ export function HeroSection() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 animate-fade-in animation-delay-200">
-            <span className="text-primary">KBS</span>-DIGITAL
-            <span className="block text-2xl md:text-3xl lg:text-4xl font-medium mt-2 text-primary-foreground/80">
-              SARL
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in animation-delay-200">
+            <span className="text-primary">KBS-DIGITAL</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl font-bold mt-2 text-foreground">
+              {" "}SARL
             </span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in animation-delay-300">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in animation-delay-300">
             Votre partenaire pour la digitalisation et la création de solutions informatiques innovantes. 
             Basés à Kara-Togo depuis septembre 2025, nous développons des projets qui répondent aux besoins locaux avec une expertise technique de pointe.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-400">
-            <Button variant="hero" size="xl">
+            <Button variant="default" size="xl">
               Découvrir nos projets
               <ArrowRight className="h-5 w-5" />
             </Button>
-            <Button variant="hero-outline" size="xl">
+            <Button variant="outline" size="xl">
               Prendre rendez-vous
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-primary-foreground/10 animate-fade-in animation-delay-400">
+          <div className="grid grid-cols-3 gap-8 mt-16 mb-6 pt-16 border-t border-border animate-fade-in animation-delay-400">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
-              <div className="text-sm text-primary-foreground/60">Projets réalisés</div>
+              <div className="text-sm text-muted-foreground">Projets réalisés</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">100+</div>
-              <div className="text-sm text-primary-foreground/60">Clients satisfaits</div>
+              <div className="text-sm text-muted-foreground">Clients satisfaits</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">2025</div>
-              <div className="text-sm text-primary-foreground/60">Année de création</div>
+              <div className="text-sm text-muted-foreground">Année de création</div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full" />
         </div>
       </div>
     </section>

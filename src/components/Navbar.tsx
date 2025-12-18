@@ -8,6 +8,8 @@ const navLinks = [
   { name: "Accueil", href: "#accueil" },
   { name: "À propos", href: "#apropos" },
   { name: "Services", href: "#services" },
+  { name: "Formations", href: "#formations" },
+  { name: "Projets", href: "#projets" },
   { name: "Équipe", href: "#equipe" },
   { name: "Hackathons", href: "#hackathons" },
   { name: "Contact", href: "#contact" },
@@ -23,8 +25,8 @@ export function Navbar() {
           <a href="#accueil" className="flex items-center gap-2">
             <img src={logo} alt="KBS Digital" className="h-10 md:h-12 w-auto" />
             <span className="font-display font-bold text-lg hidden sm:block">
-              <span className="text-primary">KBS</span>
-              <span className="text-foreground">-DIGITAL</span>
+              <span className="text-primary">KBS-DIGITAL</span>
+              <span className="text-foreground"> SARL</span>
             </span>
           </a>
 

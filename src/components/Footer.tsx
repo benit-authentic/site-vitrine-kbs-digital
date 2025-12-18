@@ -34,7 +34,7 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-6">
               <img src={logo} alt="KBS Digital" className="h-12 w-auto" />
               <span className="font-display font-bold text-lg text-secondary-foreground">
-                KBS-DIGITAL
+                KBS-DIGITAL SARL
               </span>
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed mb-6">
@@ -104,6 +104,9 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <div className="text-secondary-foreground/70 text-sm">
+                  <a href="tel:+22871177587" className="hover:text-primary transition-colors block">
+                    +228 92 68 85 05
+                  </a>
                   <a href="tel:+22871177587" className="hover:text-primary transition-colors block">
                     +228 71 17 75 87
                   </a>

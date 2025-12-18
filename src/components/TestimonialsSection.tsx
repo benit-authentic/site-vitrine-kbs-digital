@@ -2,19 +2,19 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Marie Dupont",
+    name: "Akossiwa GBEDEMAH",
     role: "Développeuse Web",
     content: "La formation m'a permis de développer des compétences solides en développement web. L'équipe est très professionnelle et à l'écoute.",
     rating: 5,
   },
   {
-    name: "Jean Martin",
+    name: "Kodjo AGBEKO",
     role: "Directeur Général",
     content: "Grâce à KBS-DIGITAL, notre entreprise a réussi sa transformation digitale. Un accompagnement de qualité du début à la fin.",
     rating: 5,
   },
   {
-    name: "Sophie Bernard",
+    name: "Edem TCHAKOU",
     role: "Chef de Projet",
     content: "Les projets collaboratifs m'ont permis de gagner en expérience pratique. Je recommande vivement KBS-DIGITAL.",
     rating: 5,

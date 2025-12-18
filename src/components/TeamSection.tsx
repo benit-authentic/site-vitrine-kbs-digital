@@ -6,35 +6,35 @@ import teamCreative from "@/assets/team-creative.jpg";
 
 const team = [
   {
-    name: "Kofi Mensah",
-    role: "Directeur Général (CEO)",
+    name: "Kévin MEBA",
+    role: "Chief Executive Officer (CEO)",
     image: teamCeo,
-    bio: "Visionnaire passionné par la tech africaine, Kofi guide KBS-DIGITAL vers l'excellence.",
+    bio: "Visionnaire et architecte du développement web et mobile, Kévin pilote la stratégie de KBS-DIGITAL vers l'excellence et l'innovation.",
     linkedin: "#",
     twitter: "#",
   },
   {
-    name: "Amara Diallo",
-    role: "Directrice Technique (CTO)",
+    name: "Bénit EDOUH-SEWA",
+    role: "Chief Technology Officer (CTO)",
     image: teamCto,
-    bio: "Experte en IA et développement, Amara assure la qualité technique de nos solutions.",
-    linkedin: "#",
+    bio: "Expert en architecture logicielle et développement full-stack, Bénit garantit l'excellence technique et la scalabilité de nos solutions.",
+    linkedin: "https://www.linkedin.com/in/bénit-edouh-sewa/",
     twitter: "#",
   },
   {
-    name: "Yao Agbénou",
-    role: "Chef de Projets",
+    name: "Serge DOTSE",
+    role: "Head of Cybersecurity & Marketing",
     image: teamPm,
-    bio: "Yao coordonne nos équipes et garantit la livraison de projets réussis.",
-    linkedin: "#",
+    bio: "Spécialiste en sécurité des systèmes d'information et stratégie digitale, Serge assure la protection de nos infrastructures et le rayonnement de notre marque.",
+    linkedin: "https://www.linkedin.com/in/serge-dotse/",
     twitter: "#",
   },
   {
-    name: "Afi Kodjo",
-    role: "Directrice Créative",
+    name: "Patrik MAYOU",
+    role: "Chief Operating Officer (COO)",
     image: teamCreative,
-    bio: "Afi apporte la vision artistique et l'identité visuelle à tous nos projets.",
-    linkedin: "#",
+    bio: "Expert en gestion de projets et développement agile, Patrik coordonne et encadre nos équipes pour garantir l'exécution opérationnelle et la livraison de solutions de qualité.",
+    linkedin: "https://www.linkedin.com/in/patrikmayou/",
     twitter: "#",
   },
 ];
@@ -78,18 +78,6 @@ export function TeamSection() {
                     className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                   >
                     <Linkedin className="h-4 w-4 text-primary-foreground" />
-                  </a>
-                  <a
-                    href={member.twitter}
-                    className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  >
-                    <Twitter className="h-4 w-4 text-primary-foreground" />
-                  </a>
-                  <a
-                    href={`mailto:contact@kbs-digital.com`}
-                    className="w-10 h-10 bg-primary/90 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  >
-                    <Mail className="h-4 w-4 text-primary-foreground" />
                   </a>
                 </div>
               </div>

@@ -5,28 +5,16 @@ import eventPitch from "@/assets/event-pitch.jpg";
 
 const events = [
   {
-    title: "Moments Forts",
-    date: "Septembre 2025",
-    location: "Kara, Togo",
-    image: eventHackathon,
-    description: "Un événement majeur rassemblant les talents tech de la région pour célébrer l'innovation locale.",
-    stats: [
-      { icon: Users, value: "200+", label: "Participants" },
-      { icon: Trophy, value: "5", label: "Prix" },
-    ],
-    type: "Événement",
-  },
-  {
-    title: "Présentations Finales",
-    date: "Septembre 2025",
+    title: "Kara Bootcamp 2025",
+    date: "09 - 13 Septembre 2025",
     location: "Kara, Togo",
     image: eventPitch,
-    description: "Les équipes présentent leurs projets innovants devant un jury d'experts. 12 projets en compétition pour 3 prix majeurs.",
+    description: "5 jours intensifs sous le thème « Compétences numériques et innovation pour une jeunesse togolaise engagée et entreprenante ». KBS-DIGITAL s'illustre avec distinction : nos collaborateurs Patrik Mayou et Bénit Edouh-Sewa remportent chacun le premier prix dans leur thématique respective.",
     stats: [
-      { icon: Trophy, value: "3", label: "Prix décernés" },
-      { icon: Users, value: "12", label: "Projets" },
+      { icon: Trophy, value: "2", label: "1ers Prix" },
+      { icon: Users, value: "5", label: "Jours" },
     ],
-    type: "Pitch",
+    type: "Bootcamp",
   },
 ];
 
@@ -52,7 +40,7 @@ export function EventsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="max-w-4xl mx-auto">
           {events.map((event, index) => (
             <div
               key={event.title}
@@ -60,7 +48,7 @@ export function EventsSection() {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <img
                   src={event.image}
                   alt={event.title}
@@ -69,52 +57,52 @@ export function EventsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 
                 {/* Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="absolute top-6 left-6">
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg">
                     {event.type}
                   </span>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-8">
-                {/* Date & Location */}
-                <div className="flex flex-wrap gap-4 mb-4">
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <Calendar className="h-4 w-4 text-primary" />
-                    {event.date}
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <MapPin className="h-4 w-4 text-primary" />
-                    {event.location}
-                  </div>
-                </div>
-
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
-                  {event.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {event.description}
-                </p>
-
-                {/* Stats */}
-                <div className="flex gap-6 mb-6">
+                {/* Stats Overlay */}
+                <div className="absolute bottom-6 right-6 flex gap-3">
                   {event.stats.map((stat) => (
-                    <div key={stat.label} className="flex items-center gap-2">
-                      <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <div key={stat.label} className="bg-card/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg">
+                      <div className="flex items-center gap-2">
                         <stat.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground">{stat.value}</div>
-                        <div className="text-xs text-muted-foreground">{stat.label}</div>
+                        <div>
+                          <div className="font-bold text-foreground text-lg">{stat.value}</div>
+                          <div className="text-xs text-muted-foreground">{stat.label}</div>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
+              </div>
 
-                <Button variant="outline" className="group/btn">
+              {/* Content */}
+              <div className="p-8 md:p-10">
+                {/* Date & Location */}
+                <div className="flex flex-wrap gap-4 mb-6">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Calendar className="h-5 w-5 text-primary" />
+                    <span className="font-medium">{event.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <MapPin className="h-5 w-5 text-primary" />
+                    <span className="font-medium">{event.location}</span>
+                  </div>
+                </div>
+
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {event.title}
+                </h3>
+                <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                  {event.description}
+                </p>
+
+                <Button variant="default" size="lg" className="group/btn">
                   En savoir plus
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
               </div>
             </div>
