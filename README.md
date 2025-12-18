@@ -1,59 +1,130 @@
-# Brand Identity Kit
+# KBS-DIGITAL SARL - Site Web Officiel
 
-## Project info
+## 📋 À propos du projet
 
-A modern React application built with Vite, TypeScript, and shadcn-ui.
+Site web moderne et responsive de **KBS-DIGITAL SARL**, entreprise togolaise spécialisée dans la transformation digitale, basée à Kara, Togo.
 
-## How can I edit this code?
+Le site présente nos services, formations, projets innovants, et notre équipe passionnée par l'innovation technologique en Afrique.
 
-There are several ways of editing your application.
+## 🚀 Caractéristiques principales
 
-**Use your preferred IDE**
+- ✨ Design moderne et responsive
+- 🌓 Mode sombre/clair
+- 📱 Optimisé pour mobile, tablette et desktop
+- ⚡ Performance optimale avec Vite
+- 🎨 Interface élégante avec shadcn-ui
+- 🔄 Animations fluides
 
-If you want to work locally using your own IDE, you can clone this repo and push changes.
+## 🛠️ Technologies utilisées
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Vite** - Build tool rapide
+- **React 18** - Framework UI
+- **TypeScript** - Typage statique
+- **Tailwind CSS** - Styles utilitaires
+- **shadcn-ui** - Composants UI modernes
+- **Lucide React** - Icônes
 
-Follow these steps:
+## 📦 Installation
+
+### Prérequis
+
+- Node.js 18+ 
+- npm ou bun
+
+### Étapes d'installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# 1. Cloner le repository
+git clone https://github.com/benit-authentic/brand-identity-kit.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Accéder au dossier du projet
+cd brand-identity-kit
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Installer les dépendances
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Lancer le serveur de développement
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Le site sera accessible sur `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📝 Scripts disponibles
 
-**Use GitHub Codespaces**
+```sh
+# Développement
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Build de production
+npm run build
 
-## What technologies are used for this project?
+# Aperçu du build
+npm run preview
 
-This project is built with:
+# Linting
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🏗️ Structure du projet
 
-## How can I deploy this project?
+```
+src/
+├── components/        # Composants React
+│   ├── ui/           # Composants UI shadcn
+│   ├── AboutSection.tsx
+│   ├── FormationsSection.tsx
+│   ├── ProjectsSection.tsx
+│   ├── TeamSection.tsx
+│   └── ...
+├── assets/           # Images et ressources
+├── lib/              # Utilitaires
+└── pages/            # Pages de l'application
+```
 
-You can deploy this project to any static hosting service like Vercel, Netlify, or GitHub Pages.
+## 🎯 Sections du site
+
+1. **Accueil** - Hero section avec présentation
+2. **À propos** - Histoire et mission de KBS-DIGITAL
+3. **Services** - Nos offres de services tech
+4. **Formations** - Modules de formation proposés
+5. **Projets** - Portfolio de nos réalisations
+6. **Équipe** - Présentation de l'équipe
+7. **Hackathons** - Événements tech organisés
+8. **Contact** - Formulaire de contact
+
+## 👥 Équipe
+
+- **Kévin MEBA** - CEO
+- **Bénit EDOUH-SEWA** - CTO
+- **Serge DOTSE** - Head of Cybersecurity & Marketing
+- **Patrik MAYOU** - COO
+
+## 🚀 Déploiement
+
+Le projet peut être déployé sur :
+
+- **Vercel** (recommandé)
+- **Netlify**
+- **GitHub Pages**
+- Tout service d'hébergement statique
+
+```sh
+# Build pour production
+npm run build
+
+# Le dossier dist/ contient les fichiers à déployer
+```
+
+## 📄 Licence
+
+© 2025 KBS-DIGITAL SARL. Tous droits réservés.
+
+## 📞 Contact
+
+- **Email** : contact@kbs-digital.com
+- **Localisation** : YÉOU, Kara, Togo
+- **Site web** : [En construction]
+
+---
+
+Développé avec ❤️ par l'équipe KBS-DIGITAL
