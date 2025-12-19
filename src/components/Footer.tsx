@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin, MessageCircle } from "lucide-react";
+import { SiTiktok, SiX, SiInstagram } from "@icons-pack/react-simple-icons";
 import logo from "@/assets/logo-kbs.png";
 
 const quickLinks = [
@@ -18,10 +19,39 @@ const services = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { 
+    icon: Linkedin, 
+    href: "https://www.linkedin.com/company/kbs-digital-sarl/", 
+    label: "LinkedIn",
+    isCustom: false
+  },
+  { 
+    icon: null, 
+    customIcon: "tiktok",
+    href: "https://www.tiktok.com/@kbs.digital.sarl", 
+    label: "TikTok",
+    isCustom: true
+  },
+  { 
+    icon: null, 
+    customIcon: "instagram",
+    href: "https://www.instagram.com/kbs.digital.sarl", 
+    label: "Instagram",
+    isCustom: true
+  },
+  { 
+    icon: null, 
+    customIcon: "x",
+    href: "https://x.com/KBSDigital", 
+    label: "X (Twitter)",
+    isCustom: true
+  },
+  { 
+    icon: MessageCircle, 
+    href: "https://whatsapp.com/channel/0029Vb6VQ07I1rcn2z5NH41L", 
+    label: "WhatsApp Channel",
+    isCustom: false
+  },
 ];
 
 export function Footer() {
@@ -45,10 +75,22 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-secondary-foreground/10 rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
+                  {social.isCustom ? (
+                    social.customIcon === "tiktok" ? (
+                      <SiTiktok className="h-5 w-5" />
+                    ) : social.customIcon === "instagram" ? (
+                      <SiInstagram className="h-5 w-5" />
+                    ) : social.customIcon === "x" ? (
+                      <SiX className="h-5 w-5" />
+                    ) : null
+                  ) : (
+                    social.icon && <social.icon className="h-5 w-5" />
+                  )}
                 </a>
               ))}
             </div>
