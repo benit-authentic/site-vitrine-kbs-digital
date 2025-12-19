@@ -9,7 +9,7 @@ const events = [
     date: "09 - 13 Septembre 2025",
     location: "Kara, Togo",
     image: eventPitch,
-    description: "5 jours intensifs sous le thème « Compétences numériques et innovation pour une jeunesse togolaise engagée et entreprenante ». KBS-DIGITAL s'illustre avec distinction : nos collaborateurs Patrik Mayou et Bénit Edouh-Sewa remportent chacun le premier prix dans leur thématique respective.",
+    description: "5 jours intensifs sous le thème « Compétences numériques et innovation pour une jeunesse togolaise engagée et entreprenante ». KBS-DIGITAL s'illustre avec distinction : nos collaborateurs Patrik Mayou et Bénit Edouh-Sewa remportent chacun le premier prix dans leur thématique respective. L'événement a réuni des professeurs d'université, des entrepreneurs locaux, IB Bank, la GIZ et de nombreux acteurs clés de l'écosystème numérique de Kara.",
     stats: [
       { icon: Trophy, value: "2", label: "1ers Prix" },
       { icon: Users, value: "5", label: "Jours" },

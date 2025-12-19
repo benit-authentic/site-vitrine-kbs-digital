@@ -1,4 +1,4 @@
-import { Heart, Smartphone, ExternalLink, Github } from "lucide-react";
+import { Heart, Smartphone, ExternalLink, Github, Landmark } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -70,6 +70,22 @@ const projects = [
     status: "Prototype",
     gradient: "from-green-500 to-emerald-500",
     color: "text-green-500",
+  },
+  {
+    icon: Landmark,
+    title: "TaxPay Digital",
+    client: "Administration Municipale",
+    description: "Solution complète de digitalisation des taxes municipales avec paiement mobile et dashboard de gestion pour moderniser la collecte des redevances.",
+    features: [
+      "Paiement des taxes en ligne via mobile",
+      "Dashboard web pour suivi en temps réel",
+      "Gestion des agents et tournées",
+      "Génération automatique de reçus",
+    ],
+    technologies: ["React", "React Native", "Node.js", "PostgreSQL"],
+    status: "Prototype",
+    gradient: "from-amber-500 to-yellow-500",
+    color: "text-amber-600",
   },
   {
     icon: Smartphone,
