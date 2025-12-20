@@ -2,6 +2,9 @@ import { Code, Smartphone, Globe, Palette, Shield, FileText, Sparkles, Clock, Us
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const formations = [
   {
@@ -36,7 +39,7 @@ const formations = [
     title: "Design Graphique",
     description: "Apprenez les bases du design graphique et de l'identité visuelle avec les outils professionnels.",
     duration: "3-4 mois",
-    level: "Débutant",
+    level: "Débutant à Avancé",
     topics: ["Photoshop", "Illustrator", "Figma", "Branding"],
     color: "text-pink-500",
   },
@@ -45,7 +48,7 @@ const formations = [
     title: "Initiation à la Cybersécurité",
     description: "Découvrez les fondamentaux de la sécurité informatique et protégez vos systèmes.",
     duration: "2-3 mois",
-    level: "Débutant",
+    level: "Débutant à Intermédiaire",
     topics: ["Sécurité réseau", "Cryptographie", "Ethical hacking", "Bonnes pratiques"],
     color: "text-red-500",
   },
@@ -54,7 +57,7 @@ const formations = [
     title: "Bureautique & Outils Professionnels",
     description: "Maîtrisez les outils essentiels : Word, Excel, PowerPoint et Google Workspace.",
     duration: "1-2 mois",
-    level: "Débutant",
+    level: "Tous Niveaux",
     topics: ["Word", "Excel", "PowerPoint", "Google Suite"],
     color: "text-orange-500",
   },
@@ -106,6 +109,10 @@ const features = [
 ];
 
 export function FormationsSection() {
+  const plugin = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
     <section id="formations" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
@@ -122,8 +129,8 @@ export function FormationsSection() {
           </p>
         </div>
 
-        {/* Features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+        {/* Features - Desktop */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={feature.title}
@@ -139,8 +146,38 @@ export function FormationsSection() {
           ))}
         </div>
 
-        {/* Formations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* Features Carousel - Mobile */}
+        <div className="md:hidden mb-16">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-4xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {features.map((feature) => (
+                <CarouselItem key={feature.title} className="pl-2 md:pl-4 basis-[85%]">
+                  <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-muted/30 border border-border h-full">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                      <feature.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
+        </div>
+
+        {/* Formations Grid - Desktop */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {formations.map((formation, index) => (
             <Card
               key={formation.title}
@@ -194,6 +231,76 @@ export function FormationsSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Formations Carousel - Mobile */}
+        <div className="md:hidden mb-12">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {formations.map((formation) => (
+                <CarouselItem key={formation.title} className="pl-2 md:pl-4 basis-[85%]">
+                  <Card className="group hover:shadow-xl transition-all duration-300 border-border overflow-hidden h-full">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className={`w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                          <formation.icon className={`h-7 w-7 ${formation.color}`} />
+                        </div>
+                        <Badge variant="secondary" className="text-xs">
+                          {formation.level}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">
+                        {formation.title}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground">
+                        {formation.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <Clock className="h-4 w-4" />
+                          <span>Durée : {formation.duration}</span>
+                        </div>
+                        
+                        <div>
+                          <p className="text-sm font-semibold text-foreground mb-2">Programme :</p>
+                          <div className="flex flex-wrap gap-2">
+                            {formation.topics.map((topic) => (
+                              <Badge key={topic} variant="outline" className="text-xs">
+                                {topic}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+
+                        <Button 
+                          variant="outline" 
+                          className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                          asChild
+                        >
+                          <a href="#contact">
+                            En savoir plus
+                          </a>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
 
         {/* CTA */}

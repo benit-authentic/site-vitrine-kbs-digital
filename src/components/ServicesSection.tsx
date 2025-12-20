@@ -1,4 +1,7 @@
 import { Code, Shield, Palette, Brain, Network, Megaphone, GraduationCap, Database, Smartphone } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const serviceCategories = [
   {
@@ -37,6 +40,10 @@ const serviceCategories = [
 ];
 
 export function ServicesSection() {
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   return (
     <section id="services" className="py-20 md:py-32 bg-muted/50 relative overflow-hidden">
       {/* Background decoration */}
@@ -61,7 +68,8 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        {/* Services Grid - Desktop */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-8">
           {serviceCategories.map((category, index) => (
             <div
               key={category.title}
@@ -103,6 +111,61 @@ export function ServicesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Services Carousel - Mobile */}
+        <div className="lg:hidden">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {serviceCategories.map((category) => (
+                <CarouselItem key={category.title} className="pl-2 md:pl-4 basis-[90%]">
+                  <div className="group relative bg-card rounded-3xl border border-border overflow-hidden hover:shadow-2xl transition-all duration-500 h-full">
+                    <div className={`h-2 bg-gradient-to-r ${category.color}`} />
+                    
+                    <div className="p-8">
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <category.icon className="h-8 w-8 text-primary-foreground" />
+                      </div>
+
+                      <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                        {category.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mb-6">
+                        {category.description}
+                      </p>
+
+                      <div className="space-y-3">
+                        {category.services.map((service) => (
+                          <div
+                            key={service.name}
+                            className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl hover:bg-muted transition-colors"
+                          >
+                            <div className="w-8 h-8 bg-background rounded-lg flex items-center justify-center">
+                              <service.icon className="h-4 w-4 text-primary" />
+                            </div>
+                            <span className="text-sm font-medium text-foreground">
+                              {service.name}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
       </div>
     </section>

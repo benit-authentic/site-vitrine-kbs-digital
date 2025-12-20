@@ -2,6 +2,9 @@ import { Heart, Smartphone, ExternalLink, Github, Landmark } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 import agronovaLogo from "@/assets/agronova.jpg";
 import snapsellLogo from "@/assets/snapsell.jpg";
 import ukbusgoLogo from "@/assets/ukbus.jpg";
@@ -106,6 +109,10 @@ const projects = [
 ];
 
 export function ProjectsSection() {
+  const plugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   return (
     <section id="projets" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -122,8 +129,8 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        {/* Projects Grid - Desktop */}
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
             <Card
               key={project.title}
@@ -215,6 +222,110 @@ export function ProjectsSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Projects Carousel - Mobile */}
+        <div className="md:hidden mb-12">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {projects.map((project) => (
+                <CarouselItem key={project.title} className="pl-2 md:pl-4 basis-[90%]">
+                  <Card className="group hover:shadow-2xl transition-all duration-500 border-border overflow-hidden relative h-full">
+                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
+                    
+                    <CardHeader className="space-y-4">
+                      <div className="flex items-start justify-between">
+                        {project.logo ? (
+                          <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <img src={project.logo} alt={project.title} className="w-full h-full object-contain p-2" />
+                          </div>
+                        ) : (
+                          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                            <project.icon className="h-8 w-8 text-white" />
+                          </div>
+                        )}
+                        <Badge variant="secondary" className="text-xs font-medium">
+                          {project.status}
+                        </Badge>
+                      </div>
+                      
+                      <div>
+                        <CardTitle className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+                          {project.title}
+                        </CardTitle>
+                        <p className="text-sm text-primary font-medium mb-3">
+                          {project.client}
+                        </p>
+                        <CardDescription className="text-muted-foreground text-base">
+                          {project.description}
+                        </CardDescription>
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className="space-y-6">
+                      <div>
+                        <p className="text-sm font-semibold text-foreground mb-3">
+                          Fonctionnalités clés :
+                        </p>
+                        <ul className="space-y-2">
+                          {project.features.map((feature) => (
+                            <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <span className={`mt-1.5 w-1.5 h-1.5 rounded-full ${project.color} bg-current flex-shrink-0`} />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-semibold text-foreground mb-2">
+                          Technologies :
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech) => (
+                            <Badge key={tech} variant="outline" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3 pt-4">
+                        <Button 
+                          variant="default" 
+                          className="flex-1 group-hover:shadow-lg transition-shadow"
+                          asChild
+                        >
+                          <a href="#contact">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            En savoir plus
+                          </a>
+                        </Button>
+                        <Button 
+                          variant="outline" 
+                          size="icon"
+                          className="group-hover:border-primary transition-colors"
+                        >
+                          <Github className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
 
         {/* Info Banner */}

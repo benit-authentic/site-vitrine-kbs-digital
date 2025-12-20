@@ -1,4 +1,7 @@
 import { Target, Users, Zap, Globe } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 import aboutOffice from "@/assets/kbs.png";
 
 const features = [
@@ -25,6 +28,10 @@ const features = [
 ];
 
 export function AboutSection() {
+  const plugin = useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: true })
+  );
+
   return (
     <section id="apropos" className="py-20 md:py-32 bg-background relative overflow-hidden">
       {/* Decorative element */}
@@ -37,8 +44,8 @@ export function AboutSection() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src={aboutOffice} 
-                alt="Notre espace de travail moderne" 
-                className="w-full h-[400px] object-cover"
+                alt="Logo KBS Digital" 
+                className="w-full h-auto object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
@@ -76,8 +83,8 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Features grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Features Grid - Desktop */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <div
               key={feature.title}
@@ -95,6 +102,40 @@ export function AboutSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Features Carousel - Mobile */}
+        <div className="md:hidden">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {features.map((feature) => (
+                <CarouselItem key={feature.title} className="pl-2 md:pl-4 basis-[85%]">
+                  <div className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-xl transition-all duration-300 h-full">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-display font-semibold text-lg text-foreground mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
       </div>
     </section>
