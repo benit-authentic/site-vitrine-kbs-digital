@@ -36,9 +36,15 @@ export function HackathonSection() {
             Organisation de hackathons dans la région de Kara pour stimuler l'innovation et encourager les talents locaux.
           </p>
 
-          <Button variant="cta" size="lg" className="mt-8">
-            <Bell className="h-5 w-5" />
-            Être notifié des prochains hackathons
+          <Button variant="cta" size="lg" className="mt-8" asChild>
+            <a 
+              href="https://whatsapp.com/channel/0029Vb6VQ07I1rcn2z5NH41L" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Bell className="h-5 w-5" />
+              Être notifié des prochains hackathons
+            </a>
           </Button>
         </div>
 

@@ -197,9 +197,12 @@ export function ProjectsSection() {
                   <Button 
                     variant="default" 
                     className="flex-1 group-hover:shadow-lg transition-shadow"
+                    asChild
                   >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    En savoir plus
+                    <a href="#contact">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      En savoir plus
+                    </a>
                   </Button>
                   <Button 
                     variant="outline" 

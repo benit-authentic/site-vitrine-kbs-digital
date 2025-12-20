@@ -45,8 +45,10 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            <Button variant="default" size="default">
-              Prendre RDV
+            <Button variant="default" size="default" asChild>
+              <a href="#contact">
+                Prendre RDV
+              </a>
             </Button>
           </div>
 
@@ -76,8 +78,10 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <Button variant="default" className="mt-2">
-                Prendre RDV
+              <Button variant="default" className="mt-2" asChild>
+                <a href="#contact" onClick={() => setIsOpen(false)}>
+                  Prendre RDV
+                </a>
               </Button>
             </div>
           </div>

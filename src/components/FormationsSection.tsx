@@ -184,8 +184,11 @@ export function FormationsSection() {
                   <Button 
                     variant="outline" 
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
                   >
-                    En savoir plus
+                    <a href="#contact">
+                      En savoir plus
+                    </a>
                   </Button>
                 </div>
               </CardContent>

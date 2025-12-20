@@ -100,9 +100,11 @@ export function EventsSection() {
                   {event.description}
                 </p>
 
-                <Button variant="default" size="lg" className="group/btn">
-                  En savoir plus
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
+                <Button variant="default" size="lg" className="group/btn" asChild>
+                  <a href="#contact">
+                    En savoir plus
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
+                  </a>
                 </Button>
               </div>
             </div>
