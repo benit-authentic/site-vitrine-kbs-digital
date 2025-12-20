@@ -196,11 +196,23 @@ export function FormationsSection() {
         {/* CTA */}
         <div className="text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="text-base">
-              Voir le Calendrier
+            <Button size="lg" className="text-base" asChild>
+              <a 
+                href="https://wa.me/22871177587?text=Bonjour%2C%20je%20souhaite%20voir%20le%20calendrier%20des%20formations%20disponibles." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Voir le Calendrier
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-base">
-              Demander un Devis
+            <Button size="lg" variant="outline" className="text-base" asChild>
+              <a 
+                href="https://wa.me/22871177587?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20formation." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Demander un Devis
+              </a>
             </Button>
           </div>
           <p className="text-sm text-muted-foreground mt-6">
