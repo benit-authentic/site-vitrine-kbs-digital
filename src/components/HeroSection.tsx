@@ -54,12 +54,16 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-400">
-            <Button variant="default" size="xl">
-              Découvrir nos projets
-              <ArrowRight className="h-5 w-5" />
+            <Button variant="default" size="xl" asChild>
+              <a href="#projets">
+                Découvrir nos projets
+                <ArrowRight className="h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="outline" size="xl">
-              Prendre rendez-vous
+            <Button variant="outline" size="xl" asChild>
+              <a href="#contact">
+                Prendre rendez-vous
+              </a>
             </Button>
           </div>
 

@@ -223,8 +223,10 @@ export function ProjectsSection() {
             Nos prototypes démontrent notre capacité à transformer des idées en solutions concrètes. 
             Contactez-nous pour discuter de votre projet et voir comment nous pouvons le concrétiser ensemble.
           </p>
-          <Button size="lg" className="text-base">
-            Discuter de votre projet
+          <Button size="lg" className="text-base" asChild>
+            <a href="#contact">
+              Discuter de votre projet
+            </a>
           </Button>
         </div>
       </div>

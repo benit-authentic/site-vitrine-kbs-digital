@@ -42,7 +42,7 @@ const socialLinks = [
   { 
     icon: null, 
     customIcon: "x",
-    href: "https://x.com/KBSDigital", 
+    href: "https://x.com/kbs_sarl", 
     label: "X (Twitter)",
     isCustom: true
   },

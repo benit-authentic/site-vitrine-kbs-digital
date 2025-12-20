@@ -27,12 +27,16 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="xl">
-              Découvrir nos projets
-              <ArrowRight className="h-5 w-5" />
+            <Button variant="hero" size="xl" asChild>
+              <a href="#projets">
+                Découvrir nos projets
+                <ArrowRight className="h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="hero-outline" size="xl">
-              Prendre rendez-vous
+            <Button variant="hero-outline" size="xl" asChild>
+              <a href="#contact">
+                Prendre rendez-vous
+              </a>
             </Button>
           </div>
         </div>
