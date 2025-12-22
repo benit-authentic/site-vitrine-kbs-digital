@@ -50,9 +50,9 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-lg">
-              <div className="text-3xl font-bold">2025</div>
-              <div className="text-sm opacity-90">Année de création</div>
+            <div className="absolute -bottom-4 md:-bottom-6 -right-2 md:-right-6 bg-primary text-primary-foreground p-3 md:p-6 rounded-xl md:rounded-2xl shadow-lg">
+              <div className="text-xl md:text-3xl font-bold">2025</div>
+              <div className="text-xs md:text-sm opacity-90">Année de création</div>
             </div>
           </div>
 
