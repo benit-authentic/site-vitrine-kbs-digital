@@ -117,14 +117,17 @@ npm run build
 
 ## 📄 Licence
 
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
 © 2025 KBS-DIGITAL SARL. Tous droits réservés.
 
 ## 📞 Contact
 
-- **Email** : contact@kbs-digital.com
+- **Email** : kbsdigitalsarl@gmail.com
+- **Téléphone** : +228 71 17 75 87 / +228 93 82 66 77
 - **Localisation** : YÉOU, Kara, Togo
 - **Site web** : [En construction]
 
 ---
 
-Développé avec ❤️ par l'équipe KBS-DIGITAL
+Conçu et développé par **Bénit EDOUH-SEWA** pour KBS-DIGITAL SARL

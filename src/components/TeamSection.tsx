@@ -17,10 +17,6 @@ const team = [
     twitter: "#",
   },
   {
-    name: "Bénit EDOUH-SEWA",
-    role: "Chief Technology Officer (CTO)",
-    image: teamCto,
-    bio: "Expert en architecture logicielle et développement full-stack, Bénit garantit l'excellence technique et la scalabilité de nos solutions.",
     linkedin: "https://www.linkedin.com/in/bénit-edouh-sewa/",
     twitter: "#",
   },
