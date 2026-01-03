@@ -223,7 +223,11 @@ export function FormationsSection() {
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                     asChild
                   >
-                    <a href="#contact">
+                    <a 
+                      href="https://wa.me/22871177587?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20la%20formation%20en%20" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       En savoir plus
                     </a>
                   </Button>
@@ -288,7 +292,11 @@ export function FormationsSection() {
                           className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                           asChild
                         >
-                          <a href="#contact">
+                          <a 
+                            href="https://wa.me/22871177587?text=Bonjour%2C%20je%20voudrais%20en%20savoir%20plus%20sur%20la%20formation%20en%20" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
                             En savoir plus
                           </a>
                         </Button>
